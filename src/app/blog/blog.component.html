@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="bl">
+        <div class="card" *ngFor="let blog of blogs">
+            <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                <p class="text-primary text-uppercase"> {{ blog?.author }}</p>
+                <h5 class="card-title">{{ blog?.title }}</h5>
+                <p class="card-text">{{ blog?.text }}</p>
+            </div>
+        </div>
+    </div>
+</div>

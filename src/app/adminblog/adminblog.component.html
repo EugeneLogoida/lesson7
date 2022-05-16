@@ -1,0 +1,46 @@
+<div class="container d-flex mt-3">
+    <div class="col-3">
+        <div class="btn btn-secondary w-20" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false" >
+            Blogs
+        </div>
+
+    </div>
+    <div class="col-9" >
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title here..." [(ngModel)]="title">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="text here..." [(ngModel)]="text"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="author here..." [(ngModel)]="author">
+        </div>
+        <button *ngIf="!editStatus" type="button" class="btn btn-dark" (click)="addPost()" [disabled]="!title || !text || !author">Add</button>
+        <button *ngIf="editStatus" type="button" class="btn btn-light" (click)="save()">Light</button>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Text</th>
+                <th scope="col">Author</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let blog of blogs">
+                <th scope="row">{{ blog.id }}</th>
+                <td>{{ blog.title }}</td>
+                <td>{{ blog.text }}</td>
+                <td>{{ blog.author }}</td>
+                <td>
+                    <button type="button" class="btn btn-dark" (click)="editPost(blog)">Edit</button></td>
+                <td>
+                    <button type="button" class="btn btn-dark" (click)="deletePost(blog)" [disabled]="editStatus">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

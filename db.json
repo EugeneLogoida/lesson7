@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "title": "first title",
+      "text": "first text",
+      "author": "Anton",
+      "id": 1
+    },
+    {
+      "title": "second title",
+      "text": "second text",
+      "author": "Vasyl",
+      "id": 2
+    }
+  ]
+}
